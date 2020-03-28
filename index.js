@@ -11,7 +11,8 @@ const resolvers = require('./graphql/resolvers/index');
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context: ({ req }) => ({ req })
 });
 const port = 2000;
 
